@@ -1,8 +1,10 @@
-const logger = require("./logger");
+const chalk = require("chalk");
+
+const { sayHi, text } = require("./logger");
 
 console.log("first node project");
 
-console.log(module);
+// console.log(module);
 
-logger.sayHi("jasem");
-// console.log();
+sayHi(chalk.blue("jasem"));
+// console.log(text);

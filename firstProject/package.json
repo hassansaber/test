@@ -8,5 +8,8 @@
   },
   "keywords": [],
   "author": "hassan saber",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.0.0"
+  }
 }
