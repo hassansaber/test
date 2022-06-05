@@ -19,3 +19,7 @@ fs.writeFile("test.txt", "salaaaaaam", (err) => {
   if (err) throw err;
   console.log("done");
 });
+
+const os = require("os");
+
+console.log(os.uptime());
