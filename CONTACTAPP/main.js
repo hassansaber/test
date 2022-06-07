@@ -3,6 +3,7 @@ const { addContact } = require("./contacts");
 
 // console.log(yargs.argv);
 
+//add contacts
 yargs.command({
   command: "create",
   aliases: ["c"],
