@@ -1,6 +1,8 @@
 const fs = require("fs");
 const chalk = require("chalk");
 
+// ----------------------------------------------
+//Adding contact
 const addContact = (fullname, phone, email) => {
   const contacts = loadContacts();
 
@@ -51,6 +53,43 @@ const saveContacts = (contacts) => {
   fs.writeFileSync("contacts.json", data);
 };
 
+// ----------------------------------------------
+//Listing contacts
+const listContacts = () => {
+  const contacts = loadContacts();
+
+  if (contacts.length > 0) {
+    console.log(chalk.yellowBright("Your contacts:\n"));
+    contacts.forEach((c) => {
+      console.log(`\t${chalk.green("Full Name")}: ${c.fullname}`);
+      console.log(`\t${chalk.green("Phone")}: ${c.phone}`);
+      console.log(`\t${chalk.green("Email")}: ${c.email}`);
+      console.log(chalk.blue("\t-----------------------"));
+    });
+  } else {
+    console.log(chalk.red("You don't have any contact"));
+  }
+  // TABLE View
+  // console.table(contacts);
+};
+
+// ----------------------------------------------
+//Remove contact
+const removeContactByFullname = (fullname) => {
+  const contacts = loadContacts();
+
+  const filterdContacts = contacts.filter((c) => c.fullname !== fullname);
+  if (contacts.length > filterdContacts.length) {
+    saveContacts(filterdContacts);
+    console.log(chalk.green(`${fullname} has been removed`));
+  } else {
+    console.log(chalk.red(`contact not found`));
+  }
+};
+
+//  --
 module.exports = {
   addContact,
+  listContacts,
+  removeContactByFullname,
 };
