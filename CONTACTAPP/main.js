@@ -9,8 +9,12 @@ const {
 // console.log(process.argv);
 // console.log(yargs.argv);
 
+//app info
 yargs.scriptName(chalk.yellowBright("Contact Manager"));
 yargs.usage(`$0 ${chalk.red("<command>")} ${chalk.green("[args]")}`);
+yargs.version("1.0.0");
+
+// COMMANDS---
 
 //add contacts
 yargs.command({

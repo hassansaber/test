@@ -1,6 +1,21 @@
 const fs = require("fs");
 const chalk = require("chalk");
 
+//contacts loader
+const loadContacts = () => {
+  try {
+    const dataBuffer = fs.readFileSync("contacts.json");
+    const dataStr = dataBuffer.toString();
+    const dataObj = JSON.parse(dataStr);
+    return dataObj;
+  } catch (err) {
+    // console.log(err);
+    return [];
+  }
+};
+
+//COMMANDS functions--
+
 // ----------------------------------------------
 //Adding contact
 const addContact = (fullname, phone, email) => {
@@ -14,18 +29,6 @@ const addContact = (fullname, phone, email) => {
     });
     saveContacts(contacts);
     console.log(chalk.green("contact saved"));
-  }
-};
-
-const loadContacts = () => {
-  try {
-    const dataBuffer = fs.readFileSync("contacts.json");
-    const dataStr = dataBuffer.toString();
-    const dataObj = JSON.parse(dataStr);
-    return dataObj;
-  } catch (err) {
-    // console.log(err);
-    return [];
   }
 };
 
