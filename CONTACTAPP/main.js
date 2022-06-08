@@ -10,7 +10,7 @@ const {
 // console.log(yargs.argv);
 
 yargs.scriptName(chalk.yellowBright("Contact Manager"));
-yargs.usage(`$0 ${chalk.}`);
+yargs.usage(`$0 ${chalk.red("<command>")} ${chalk.green("[args]")}`);
 
 //add contacts
 yargs.command({
