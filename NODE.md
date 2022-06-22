@@ -73,4 +73,10 @@ server runs in port 3000
 
 - in ND every JS file is a module
 - in Vanilla JS every Func in file , is accessible everywhere by WINDOW global object
--
+  - in ND we don't have WINDOW and DOCUMENT
+
+---
+
+## require
+
+ND global obj
